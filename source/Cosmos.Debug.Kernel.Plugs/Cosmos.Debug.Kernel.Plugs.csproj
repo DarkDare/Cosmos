@@ -85,6 +85,10 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Cosmos.Debug.Kernel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5ae71220097cb983, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Cosmos.Debug.Kernel\bin\Debug\net452\Cosmos.Debug.Kernel.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -104,10 +108,6 @@
     <ProjectReference Include="..\Cosmos.IL2CPU.Plugs\Cosmos.IL2CPU.Plugs.csproj">
       <Project>{C801F19C-A9D3-42D5-9A57-9FFDF9B4D05E}</Project>
       <Name>Cosmos.IL2CPU.Plugs</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cosmos.Debug.Kernel\Cosmos.Debug.Kernel.csproj">
-      <Project>{61607F1E-58F9-41CF-972F-128384F3E115}</Project>
-      <Name>Cosmos.Debug.Kernel</Name>
     </ProjectReference>
     <ProjectReference Include="..\XSharp.Compiler\XSharp.Compiler.csproj">
       <Project>{A281A1B1-C718-4BCB-A7BE-ED840A70449A}</Project>

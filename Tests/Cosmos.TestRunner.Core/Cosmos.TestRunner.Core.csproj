@@ -137,10 +137,6 @@
       <Project>{B97A2956-C363-47F2-A6AA-B4FCCFF4D315}</Project>
       <Name>Cosmos.Debug.Kernel.Plugs</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\source\Cosmos.Debug.Kernel\Cosmos.Debug.Kernel.csproj">
-      <Project>{61607F1E-58F9-41CF-972F-128384F3E115}</Project>
-      <Name>Cosmos.Debug.Kernel</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\source\Cosmos.Debug.VSDebugEngine\Cosmos.Debug.VSDebugEngine.csproj">
       <Project>{6D2688FE-6FD8-44A8-B96A-6037457F72A7}</Project>
       <Name>Cosmos.Debug.VSDebugEngine</Name>

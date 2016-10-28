@@ -13,12 +13,12 @@ namespace Cosmos.Compiler.Tests.SimpleWriteLine.Kernel
         {
             var xMessage = "Cosmos booted successfully. Type a line of text to get it echoed back.";
             Console.WriteLine(xMessage);
-            Debugger.DoSend("After writeline");
+            mDebugger.Send("After writeline");
         }
 
         protected override void Run()
         {
-            Debugger.DoSend("In Run");
+            mDebugger.Send("In Run");
             try
             {
                 Console.WriteLine("Started correctly!");
@@ -28,7 +28,7 @@ namespace Cosmos.Compiler.Tests.SimpleWriteLine.Kernel
 
                 Assert.IsTrue(true, "Dummy assertion, to test the system");
 
-                Debugger.DoSend("Test TryFinally now");
+                mDebugger.Send("Test TryFinally now");
                 TestTryFinally.Execute();
 
                 Assert.IsTrue(InterruptsEnabled, "Interrupts are not enabled!");

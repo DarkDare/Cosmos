@@ -76,6 +76,14 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Cosmos.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5ae71220097cb983, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Cosmos.Common\bin\Debug\net452\Cosmos.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Cosmos.Debug.Kernel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5ae71220097cb983, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Cosmos.Debug.Kernel\bin\Debug\net452\Cosmos.Debug.Kernel.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -98,17 +106,9 @@
     <Compile Include="RAT.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Cosmos.Common\Cosmos.Common.csproj">
-      <Project>{1FAC100C-D732-4EA4-B518-5AF4BAF64F2E}</Project>
-      <Name>Cosmos.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Cosmos.Core\Cosmos.Core.csproj">
       <Project>{5AC4773C-CB4E-4CD9-8D50-02E10A07DEE6}</Project>
       <Name>Cosmos.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cosmos.Debug.Kernel\Cosmos.Debug.Kernel.csproj">
-      <Project>{61607F1E-58F9-41CF-972F-128384F3E115}</Project>
-      <Name>Cosmos.Debug.Kernel</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

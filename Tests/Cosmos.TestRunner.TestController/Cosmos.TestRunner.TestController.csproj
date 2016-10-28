@@ -77,6 +77,10 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Cosmos.Debug.Kernel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5ae71220097cb983, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\source\Cosmos.Debug.Kernel\bin\Debug\net452\Cosmos.Debug.Kernel.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -89,12 +93,6 @@
     <Compile Include="Enums.cs" />
     <Compile Include="TestController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\source\Cosmos.Debug.Kernel\Cosmos.Debug.Kernel.csproj">
-      <Project>{61607F1E-58F9-41CF-972F-128384F3E115}</Project>
-      <Name>Cosmos.Debug.Kernel</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\source\Cosmos.snk">

@@ -73,6 +73,10 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Cosmos.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5ae71220097cb983, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\source\Cosmos.Common\bin\Debug\net452\Cosmos.Common.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -90,12 +94,6 @@
   <ItemGroup>
     <Compile Include="ToHexStringTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\source\Cosmos.Common\Cosmos.Common.csproj">
-      <Project>{1fac100c-d732-4ea4-b518-5af4baf64f2e}</Project>
-      <Name>Cosmos.Common</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
