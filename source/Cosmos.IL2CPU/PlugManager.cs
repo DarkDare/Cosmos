@@ -320,7 +320,7 @@ namespace Cosmos.IL2CPU
                             if (!OK)
                             {
                                 if (xAttrib == null
-                                    || xAttrib.IsOptional)
+                                    || xAttrib.Optional)
                                 {
                                     if (LogWarning != null)
                                     {

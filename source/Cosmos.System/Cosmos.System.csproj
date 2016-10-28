@@ -142,12 +142,6 @@
     <Content Include="Kernel.html" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Cosmos.HAL\Cosmos.HAL.csproj">
-      <Project>{6A991D03-1435-4005-9809-B8BACDF3B021}</Project>
-      <Name>Cosmos.HAL</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include=".editorconfig" />
     <None Include="Cosmos.snk" />
   </ItemGroup>

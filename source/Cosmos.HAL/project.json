@@ -1,11 +1,9 @@
-{
+﻿{
   "version": "1.0.0-*",
 
   "dependencies": {
     "Cosmos.Common": "1.0.0-*",
     "Cosmos.Core": "1.0.0-*",
-    "Cosmos.Core.Common": "1.0.0-*",
-    "Cosmos.Core.Memory": "1.0.0-*",
     "Cosmos.Debug.Kernel": "1.0.0-*",
     "Cosmos.IL2CPU.Plugs": "1.0.0-*",
     "NETStandard.Library": "1.6.0"
@@ -19,7 +17,6 @@
 
   "buildOptions": {
     "publicSign": true,
-    "keyFile": "Cosmos.snk",
-      "allowUnsafe": true
+    "keyFile": "Cosmos.snk"
     }
 }

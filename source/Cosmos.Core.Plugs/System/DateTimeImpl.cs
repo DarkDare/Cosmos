@@ -1,5 +1,5 @@
 ﻿using System;
-
+using Cosmos.Core.Common;
 using Cosmos.IL2CPU.Plugs;
 
 namespace Cosmos.Core.Plugs.System
@@ -11,15 +11,15 @@ namespace Cosmos.Core.Plugs.System
         public static DateTime get_Now()
         {
             int[] raw = GetRawDate();
-            
+
             return new DateTime(
-                100 * BCDtoBIN(raw[10]) + BCDtoBIN(raw[9]), //YEAR
-                BCDtoBIN(raw[8]), //MONTH
-                BCDtoBIN(raw[7]), //DAY
-                BCDtoBIN(raw[4]), //HOUR
-                BCDtoBIN(raw[2]), //MINUTE
-                BCDtoBIN(raw[0]) //SECOND
-            );
+                       100 * BCDtoBIN(raw[10]) + BCDtoBIN(raw[9]), //YEAR
+                       BCDtoBIN(raw[8]), //MONTH
+                       BCDtoBIN(raw[7]), //DAY
+                       BCDtoBIN(raw[4]), //HOUR
+                       BCDtoBIN(raw[2]), //MINUTE
+                       BCDtoBIN(raw[0]) //SECOND
+                   );
         }
 
         // TODO: get timezone
@@ -51,7 +51,7 @@ namespace Cosmos.Core.Plugs.System
 
             return raw;
         }
-        
+
         public static long GetSystemTimeAsFileTime() => get_Now().Ticks;
 
         /// <summary>

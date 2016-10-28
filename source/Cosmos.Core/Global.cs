@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Cosmos.Core.Common;
 using Cosmos.Core.IOGroup;
 using Cosmos.Debug.Kernel;
 
@@ -16,7 +17,7 @@ namespace Cosmos.Core
         // These are used by Bootstrap.. but also called to signal end of interrupt etc...
         // Need to chagne this.. I dont like how this is.. maybe isolate or split into to classes... one for boostrap one for
         // later user
-        static public PIC PIC
+        public static PIC PIC
         {
             get
             {
@@ -24,7 +25,7 @@ namespace Cosmos.Core
             }
         }
 
-        static public CPU CPU
+        public static CPU CPU
         {
             get
             {

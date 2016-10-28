@@ -6,64 +6,63 @@ namespace Cosmos.Core.Common
     // Non hardware class, only used by core and hardware drivers for ports etc.
     public class CPU
     {
-        [PlugMethod(AssemblerName = "CPUUpdateIDTAsm")]
-        public static void UpdateIDT(CPU aThis, bool aEnableInterruptsImmediately)
+        [PlugMethod(Required = true)]
+        public void UpdateIDT(bool aEnableInterruptsImmediately)
         {
             throw new NotImplementedException();
         }
 
         // Amount of RAM in MB's.
         // needs to be static, as Heap needs it before we can instantiate objects
-        [PlugMethod(AssemblerName = "CPUGetAmountOfRAMAsm")]
+        [PlugMethod(Required = true)]
         public static uint GetAmountOfRAM()
         {
             throw new NotImplementedException();
         }
 
         // needs to be static, as Heap needs it before we can instantiate objects
-        [PlugMethod(AssemblerName = "CPUGetEndOfKernelAsm")]
+        [PlugMethod(Required = true)]
         public static uint GetEndOfKernel()
         {
             throw new NotImplementedException();
         }
 
-        [PlugMethod(AssemblerName = "CPUZeroFillAsm")]
+        [PlugMethod(Required = true)]
         // TODO: implement this using REP STOSB and REPO STOSD
         public static void ZeroFill(uint aStartAddress, uint aLength)
         {
             throw new NotImplementedException();
         }
 
-        [PlugMethod(AssemblerName = "CPUInitFloatAsm")]
-        public static void InitFloat()
+        [PlugMethod(Required = true)]
+        public void InitFloat()
         {
             throw new NotImplementedException();
         }
 
-        [PlugMethod(AssemblerName = "CPUInitSSEAsm")]
-        public static void InitSSE()
+        [PlugMethod(Required = true)]
+        public void InitSSE()
         {
             throw new NotImplementedException();
         }
 
-        [PlugMethod(AssemblerName = "CPUHaltAsm")]
-        public static void Halt()
+        [PlugMethod(Required = true)]
+        public void Halt()
         {
             throw new NotImplementedException();
         }
 
-        [PlugMethod(AssemblerName = "CPUDisableINTsAsm")]
+        [PlugMethod(Required = true)]
         public static void DoDisableInterrupts()
         {
             throw new NotImplementedException();
         }
 
-        [PlugMethod(AssemblerName = "CPUEnableINTsAsm")]
+        [PlugMethod(Required = true)]
         public static void DoEnableInterrupts()
         {
             throw new NotImplementedException();
         }
-
 
         public void Reboot()
         {

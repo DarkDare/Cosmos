@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Cosmos.Core.Common;
 
 namespace Cosmos.Core {
     public static class Bootstrap {
@@ -23,7 +24,7 @@ namespace Cosmos.Core {
             PIC = new PIC();
             CPU.UpdateIDT(true);
 
-            /* TODO check using CPUID that SSE2 is supported */ 
+            /* TODO check using CPUID that SSE2 is supported */
             CPU.InitSSE();
 
             /*
@@ -33,7 +34,7 @@ namespace Cosmos.Core {
              * definively this problem.
              */
             CPU.InitFloat();
-            
+
            // Managed_Memory_System.ManagedMemory.Initialize();
            // Managed_Memory_System.ManagedMemory.SetUpMemoryArea();
         }

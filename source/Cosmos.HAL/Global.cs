@@ -1,6 +1,7 @@
 ﻿using System;
 
 using Cosmos.Core;
+using Cosmos.Core.Common;
 using Cosmos.Debug.Kernel;
 using Cosmos.HAL.BlockDevice;
 
@@ -14,19 +15,36 @@ namespace Cosmos.HAL
 
     public static bool NumLock
     {
-      get { return _numLock; }
-      set { _numLock = value; Keyboard?.UpdateLeds(); }
+      get
+      {
+        return _numLock;
+      }
+      set
+      {
+        _numLock = value;
+        Keyboard?.UpdateLeds();
+      }
     }
 
     public static bool CapsLock
     {
-      get { return _capsLock; }
-      set { _capsLock = value; Keyboard?.UpdateLeds(); }
+      get
+      {
+        return _capsLock;
+      }
+      set
+      {
+        _capsLock = value;
+        Keyboard?.UpdateLeds();
+      }
     }
 
     public static bool ScrollLock
     {
-      get { return _scrollLock; }
+      get
+      {
+        return _scrollLock;
+      }
       set
       {
         _scrollLock = value;
@@ -44,11 +62,11 @@ namespace Cosmos.HAL
     private static bool _scrollLock;
 
     private static void InitAta(Ata.ControllerIdEnum aControllerID,
-        Ata.BusPositionEnum aBusPosition)
+                                Ata.BusPositionEnum aBusPosition)
     {
       var xIO = aControllerID == Ata.ControllerIdEnum.Primary
-          ? Core.Global.BaseIOGroups.ATA1
-          : Core.Global.BaseIOGroups.ATA2;
+                  ? Core.Global.BaseIOGroups.ATA1
+                  : Core.Global.BaseIOGroups.ATA2;
       var xATA = new AtaPio(xIO, aControllerID, aBusPosition);
       if (xATA.DriveType == AtaPio.SpecLevel.Null)
       {
@@ -127,7 +145,7 @@ namespace Cosmos.HAL
       if (keyboard == null)
       {
         mDebugger.Send("No keyboard specified!");
-        throw new SystemException("No keyboard specified!");
+        throw new Exception("No keyboard specified!");
       }
       else
       {

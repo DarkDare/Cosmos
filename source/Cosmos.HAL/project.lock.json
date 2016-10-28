@@ -1115,23 +1115,6 @@
           "netstandard1.6/Cosmos.Core.Common.dll": {}
         }
       },
-      "Cosmos.Core.Memory/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v1.6",
-        "dependencies": {
-          "Cosmos.Common": "1.0.0",
-          "Cosmos.Core.Common": "1.0.0",
-          "Cosmos.Debug.Kernel": "1.0.0",
-          "Cosmos.IL2CPU.Plugs": "1.0.0",
-          "NETStandard.Library": "1.6.0"
-        },
-        "compile": {
-          "netstandard1.6/Cosmos.Core.Memory.dll": {}
-        },
-        "runtime": {
-          "netstandard1.6/Cosmos.Core.Memory.dll": {}
-        }
-      },
       "Cosmos.Debug.Kernel/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v1.6",
@@ -4119,11 +4102,6 @@
       "path": "../Cosmos.Core.Common/project.json",
       "msbuildProject": "../Cosmos.Core.Common/Cosmos.Core.Common.xproj"
     },
-    "Cosmos.Core.Memory/1.0.0": {
-      "type": "project",
-      "path": "../Cosmos.Core.Memory/project.json",
-      "msbuildProject": "../Cosmos.Core.Memory/Cosmos.Core.Memory.xproj"
-    },
     "Cosmos.Debug.Kernel/1.0.0": {
       "type": "project",
       "path": "../Cosmos.Debug.Kernel/project.json",
@@ -4139,8 +4117,6 @@
     "": [
       "Cosmos.Common >= 1.0.0-*",
       "Cosmos.Core >= 1.0.0-*",
-      "Cosmos.Core.Common >= 1.0.0-*",
-      "Cosmos.Core.Memory >= 1.0.0-*",
       "Cosmos.Debug.Kernel >= 1.0.0-*",
       "Cosmos.IL2CPU.Plugs >= 1.0.0-*",
       "NETStandard.Library >= 1.6.0"
