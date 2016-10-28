@@ -1,15 +1,13 @@
 ﻿using System;
 
 using Cosmos.IL2CPU.Plugs;
-using Cosmos.IL2CPU.Plugs.Assemblers;
-using Cosmos.IL2CPU.Plugs.Assemblers.Buffer;
 
 namespace Cosmos.Core.Plugs.System
 {
     [Plug(Target = typeof(Buffer))]
     public class BufferImpl
     {
-        [PlugMethod(IsOptional = true)]
+        [PlugMethod(Optional = true)]
         public static unsafe void __Memcpy(byte* src, byte* dest, int count)
         {
             global::System.Buffer.BlockCopy((Array)(object)*src, 0, (Array)(object)*dest, 0, count);
@@ -24,7 +22,7 @@ namespace Cosmos.Core.Plugs.System
         /// <param name="dest">Destination address to copy data into.</param>
         /// <param name="src">Source address from where copy data.</param>
         /// <param name="count">Count of bytes to copy.</param>
-        [PlugMethod(IsOptional = true)]
+        [PlugMethod(Optional = true)]
         public static unsafe void __Memmove(byte* dest, byte* src, uint count)
         {
             uint t;
@@ -142,7 +140,7 @@ namespace Cosmos.Core.Plugs.System
             }
         }
 
-        [PlugMethod(Assembler = typeof(BufferBlockCopyAsm))]
+        [PlugMethod(AssemblerName = "BufferBlockCopyAsm")]
         public static void BlockCopy(Array src, int srcOffset, Array dst, int dstOffset, int count)
         {
         }

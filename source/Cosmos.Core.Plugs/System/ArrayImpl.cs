@@ -1,7 +1,5 @@
 ﻿using System;
 using Cosmos.IL2CPU.Plugs;
-using Cosmos.IL2CPU.Plugs.Assemblers;
-using Cosmos.IL2CPU.Plugs.Assemblers.Array;
 
 namespace Cosmos.Core.Plugs.System
 {
@@ -37,12 +35,10 @@ namespace Cosmos.Core.Plugs.System
             return aThis.Length;
         }
 
-        [PlugMethod(Assembler = typeof(ArrayGetLengthAsm))]
+        [PlugMethod(AssemblerName = "ArrayGetLengthAsm")]
         public static int get_Length(Array aThis)
         {
-            //aThis += 2;
-            //return *aThis;
-            return 0;
+            throw new NotImplementedException();
         }
 
         [PlugMethod(Signature = "System_Boolean__System_Array_TrySZBinarySearch_System_Array__System_Int32__System_Int32__System_Object___System_Int32_")]
@@ -69,7 +65,6 @@ namespace Cosmos.Core.Plugs.System
             return false;
         }
 
-        //[PlugMethod(Signature = "System_Boolean__System_Array_TrySZIndexOf_System_Array__System_Int32__System_Int32__System_Object__System_Int32__")]
         private static unsafe bool TrySZIndexOf(uint* aArray, uint sourceIndex, uint count, uint value, out uint retVal)
         {
             aArray = (uint*)aArray[0];
@@ -86,9 +81,10 @@ namespace Cosmos.Core.Plugs.System
             return false;
         }
 
-        [PlugMethod(Assembler = typeof(ArrayInternalCopyAsm))]
+        [PlugMethod(AssemblerName = "ArrayInternalCopyAsm")]
         public static void Copy(Array sourceArray, int sourceIndex, Array destinationArray, int destinationIndex, int length, bool reliable)
         {
+            throw new NotImplementedException();
         }
 
         public static unsafe int get_Rank(int* aThis)

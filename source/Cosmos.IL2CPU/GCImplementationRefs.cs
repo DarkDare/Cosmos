@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using Cosmos.Core.Common;
 
 namespace Cosmos.IL2CPU {
 	public static class GCImplementationRefs {

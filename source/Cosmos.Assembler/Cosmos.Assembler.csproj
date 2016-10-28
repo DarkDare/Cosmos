@@ -119,6 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assembler.cs" />
+    <Compile Include="AssemblerMethod.cs" />
     <Compile Include="BaseAssemblerElement.cs" />
     <Compile Include="Comment.cs" />
     <Compile Include="DataEndIfDefined.cs" />

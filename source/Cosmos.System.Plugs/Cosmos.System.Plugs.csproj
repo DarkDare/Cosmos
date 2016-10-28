@@ -91,6 +91,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Cosmos.Debug.Kernel\bin\Debug\net452\Cosmos.Debug.Kernel.dll</HintPath>
     </Reference>
+    <Reference Include="Cosmos.IL2CPU.Plugs">
+      <HintPath>..\Cosmos.IL2CPU.Plugs\bin\Debug\net452\Cosmos.IL2CPU.Plugs.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -156,10 +159,6 @@
     <ProjectReference Include="..\Cosmos.HAL\Cosmos.HAL.csproj">
       <Project>{6A991D03-1435-4005-9809-B8BACDF3B021}</Project>
       <Name>Cosmos.HAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cosmos.IL2CPU.Plugs\Cosmos.IL2CPU.Plugs.csproj">
-      <Project>{C801F19C-A9D3-42D5-9A57-9FFDF9B4D05E}</Project>
-      <Name>Cosmos.IL2CPU.Plugs</Name>
     </ProjectReference>
     <ProjectReference Include="..\Cosmos.System\Cosmos.System.csproj">
       <Project>{3def0461-08ab-471a-8f03-a9c556652a0f}</Project>

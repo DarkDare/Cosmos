@@ -920,7 +920,7 @@ namespace Cosmos.IL2CPU
                                 {
                                     continue;
                                 }
-                                if (xAttrib.PlugRequired)
+                                if (xAttrib.Required)
                                 {
                                     throw new Exception(string.Format("Method {0} requires a plug, but none is implemented", xMethod.Name));
                                 }

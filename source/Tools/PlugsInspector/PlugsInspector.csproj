@@ -78,6 +78,9 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Cosmos.IL2CPU.Plugs">
+      <HintPath>..\..\Cosmos.IL2CPU.Plugs\bin\Debug\net452\Cosmos.IL2CPU.Plugs.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -126,10 +129,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\source\Cosmos.IL2CPU.Plugs\Cosmos.IL2CPU.Plugs.csproj">
-      <Project>{c801f19c-a9d3-42d5-9a57-9ffdf9b4d05e}</Project>
-      <Name>Cosmos.IL2CPU.Plugs</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\source\Cosmos.IL2CPU\Cosmos.IL2CPU.csproj">
       <Project>{239e33a7-f0c3-4801-85ca-4d8f89a31dc0}</Project>
       <Name>Cosmos.IL2CPU</Name>

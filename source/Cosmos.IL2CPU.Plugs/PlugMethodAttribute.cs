@@ -7,11 +7,12 @@ namespace Cosmos.IL2CPU.Plugs
     public string Signature = null;
     public bool Enabled = true;
     public Type Assembler = null;
+    public string AssemblerName = null;
     public bool IsMonoOnly = false;
     public bool IsMicrosoftdotNETOnly = false;
-    public bool PlugRequired = false;
+    public bool Required = false;
     public bool IsWildcard = false;
     public bool WildcardMatchParameters = false;
-    public bool IsOptional = true;
+    public bool Optional = true;
   }
 }
