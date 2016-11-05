@@ -3,6 +3,7 @@ using System.Linq;
 using CPUx86 = Cosmos.Assembler.x86;
 using Cosmos.Assembler;
 using Cosmos.IL2CPU.ILOpCodes;
+using Cosmos.IL2CPU.Plugs;
 using Cosmos.IL2CPU.Plugs.System;
 using XSharp.Compiler;
 using static XSharp.Compiler.XSRegisters;
@@ -27,7 +28,7 @@ namespace Cosmos.IL2CPU.X86.IL
       XS.Pop(EAX);
       XS.Set(EDX, aElementSize);
       XS.Multiply(EDX);
-      XS.Add(EAX, (uint) (ObjectImpl.FieldDataOffset + 4));
+      XS.Add(EAX, (uint) (ObjectInfo.FieldDataOffset + 4));
 
       // pop the array now
       XS.Add(ESP, 4);

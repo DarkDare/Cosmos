@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Diagnostics;
-using System.Diagnostics.Eventing.Reader;
 using System.IO;
 using System.Linq;
-using System.Runtime.Remoting.Channels;
-using System.Security;
 using Cosmos.Build.Common;
 using Cosmos.Build.MSBuild;
-using Cosmos.Core.Plugs;
 using Cosmos.Debug.Kernel.Plugs;
 using Cosmos.IL2CPU;
-using Cosmos.System.Plugs.System;
 using IL2CPU;
 using Microsoft.Win32;
 
@@ -39,6 +33,8 @@ namespace Cosmos.TestRunner.Core
 
         private void RunIL2CPU(string kernelFileName, string outputFile)
         {
+            string xPath = @"C:\Users\Charles\Dropbox\Development\Cosmos\Tests\Cosmos.Compiler.Tests.NetCore\bin\Debug\netstandard1.6";
+
             var xArguments = new[]
                              {
                                  "DebugEnabled:true",
@@ -53,9 +49,9 @@ namespace Cosmos.TestRunner.Core
                                  "EmitDebugSymbols:True",
                                  "IgnoreDebugStubAttribute:False",
                                  "References:" + kernelFileName,
-                                 "References:" + typeof(CPUImpl).Assembly.Location,
-                                 "References:" + typeof(DebugBreak).Assembly.Location,
-                                 "References:" + typeof(ConsoleImpl).Assembly.Location
+                                 "References:" + Path.Combine(xPath, "Cosmos.Core.Plugs.dll"),
+                                 "References:" + Path.Combine(xPath, "Cosmos.Debug.Kernel.Plugs.dll"),
+                                 "References:" + Path.Combine(xPath, "Cosmos.System.Plugs.dll")
                              };
 
             if (RunIL2CPUInProcess)

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using Cosmos.Build.Common;
 
@@ -23,7 +24,7 @@ namespace Cosmos.TestRunner.Core
 
             // If you're working on the compiler (or other lower parts), you can choose to run the compiler in process
             // one thing to keep in mind though, is that this only works with 1 kernel at a time!
-            engine.RunIL2CPUInProcess = false;
+            engine.RunIL2CPUInProcess = true;
             engine.TraceAssembliesLevel = TraceAssemblies.User;
             //engine.EnableStackCorruptionChecks = false;
 
@@ -33,11 +34,15 @@ namespace Cosmos.TestRunner.Core
             //engine.RunWithGDB = true;
             //engine.StartBochsDebugGui = true;
 
+            string xPath = @"C:\Users\Charles\Dropbox\Development\Cosmos\Tests\Cosmos.Compiler.Tests.NetCore\bin\Debug\netstandard1.6";
+
             // Select kernels to be tested by adding them to the engine
-            foreach (var xType in TestKernelSets.GetStableKernelTypes())
-            {
-                engine.AddKernel(xType.Assembly.Location);
-            }
+            engine.AddKernel(Path.Combine(xPath, "Cosmos.Compiler.Tests.NetCore.dll"));
+
+            //foreach (var xType in TestKernelSets.GetStableKernelTypes())
+            //{
+            //    engine.AddKernel(xType.Assembly.Location);
+            //}
 
             //engine.AddKernel(typeof(VGACompilerCrash.Kernel).Assembly.Location);
             //engine.AddKernel(typeof(Cosmos.Compiler.Tests.Bcl.Kernel).Assembly.Location);

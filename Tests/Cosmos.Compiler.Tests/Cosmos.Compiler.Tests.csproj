@@ -99,14 +99,6 @@
       <Project>{b97a2956-c363-47f2-a6aa-b4fccff4d315}</Project>
       <Name>Cosmos.Debug.Kernel.Plugs</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\source\Cosmos.System.Plugs\Cosmos.System.Plugs.csproj">
-      <Project>{7C64B97F-516D-4A6D-B9E1-3FE48F561409}</Project>
-      <Name>Cosmos.System.Plugs</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\source\Cosmos.System\Cosmos.System.csproj">
-      <Project>{3DEF0461-08AB-471A-8F03-A9C556652A0F}</Project>
-      <Name>Cosmos.System</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Cosmos.Compiler.Tests.Interfaces\Cosmos.Compiler.Tests.Interfaces.Kernel.csproj">
       <Project>{bdc011be-6041-4a58-a6e7-0f592e78cb27}</Project>
       <Name>Cosmos.Compiler.Tests.Interfaces.Kernel</Name>

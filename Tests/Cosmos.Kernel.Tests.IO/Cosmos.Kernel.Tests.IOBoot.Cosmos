@@ -55,11 +55,6 @@
       <Project>{b97a2956-c363-47f2-a6aa-b4fccff4d315}</Project>
       <Private>True</Private>
     </ProjectReference>
-    <ProjectReference Include="..\..\source\Cosmos.System.Plugs\Cosmos.System.Plugs.csproj">
-      <Name>Cosmos.System.Plugs</Name>
-      <Project>{7c64b97f-516d-4a6d-b9e1-3fe48f561409}</Project>
-      <Private>True</Private>
-    </ProjectReference>
     <ProjectReference Include="..\Cosmos.Kernel.Tests.IO\Cosmos.Kernel.Tests.IO.csproj">
       <Name>Cosmos.Kernel.Tests.IO</Name>
       <Project>{47b1a772-4a53-4a53-9bad-31df119b1725}</Project>

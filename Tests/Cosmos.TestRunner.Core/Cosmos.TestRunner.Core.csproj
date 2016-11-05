@@ -68,6 +68,14 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Cosmos.IL2CPU.Plugs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=309e74c26df3ae7f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\source\Cosmos.IL2CPU.Plugs\bin\Debug\net452\Cosmos.IL2CPU.Plugs.dll</HintPath>
+    </Reference>
+    <Reference Include="Cosmos.TestRunner.TestController, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5ae71220097cb983, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Cosmos.TestRunner.TestController\bin\Debug\net452\Cosmos.TestRunner.TestController.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Build.Framework" />
     <Reference Include="Microsoft.Build.Utilities.v4.0" />
     <Reference Include="System" />
@@ -141,73 +149,9 @@
       <Project>{239E33A7-F0C3-4801-85CA-4D8F89A31DC0}</Project>
       <Name>Cosmos.IL2CPU</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\source\Cosmos.System.Plugs\Cosmos.System.Plugs.csproj">
-      <Project>{7C64B97F-516D-4A6D-B9E1-3FE48F561409}</Project>
-      <Name>Cosmos.System.Plugs</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\source\Cosmos.System\Cosmos.System.csproj">
-      <Project>{3DEF0461-08AB-471A-8F03-A9C556652A0F}</Project>
-      <Name>Cosmos.System</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\source\IL2CPU\IL2CPU.csproj">
       <Project>{6128DEEB-D30F-4859-B60F-C36D5452F3E9}</Project>
       <Name>IL2CPU</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BoxingTests\BoxingTests.csproj">
-      <Project>{f8889473-5866-4913-86ac-8072a1a2558c}</Project>
-      <Name>BoxingTests</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cosmos.Compiler.Tests.Bcl\Cosmos.Compiler.Tests.Bcl.csproj">
-      <Project>{31e3f8e2-7cc0-426c-accb-77b3319af5d3}</Project>
-      <Name>Cosmos.Compiler.Tests.Bcl</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cosmos.Compiler.Tests.Encryption\Cosmos.Compiler.Tests.Encryption.csproj">
-      <Project>{48ebdeb2-6a6a-4df2-b5f1-db6d299401f2}</Project>
-      <Name>Cosmos.Compiler.Tests.Encryption</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cosmos.Compiler.Tests.Exceptions\Cosmos.Compiler.Tests.Exceptions.csproj">
-      <Project>{9df5c0a9-b91c-4647-b939-e47513743a0c}</Project>
-      <Name>Cosmos.Compiler.Tests.Exceptions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cosmos.Compiler.Tests.Interfaces\Cosmos.Compiler.Tests.Interfaces.Kernel.csproj">
-      <Project>{bdc011be-6041-4a58-a6e7-0f592e78cb27}</Project>
-      <Name>Cosmos.Compiler.Tests.Interfaces.Kernel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cosmos.Compiler.Tests.MethodTests\Cosmos.Compiler.Tests.MethodTests.csproj">
-      <Project>{fe8b9f39-7c96-4866-9a18-386735895cee}</Project>
-      <Name>Cosmos.Compiler.Tests.MethodTests</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cosmos.Compiler.Tests.SimpleWriteLine.Kernel\Cosmos.Compiler.Tests.SimpleWriteLine.Kernel.csproj">
-      <Project>{57045fe8-b0fe-4fc1-810f-7c3914aef1de}</Project>
-      <Name>Cosmos.Compiler.Tests.SimpleWriteLine.Kernel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cosmos.Compiler.Tests.SingleEchoTest\Cosmos.Compiler.Tests.SingleEchoTest.csproj">
-      <Project>{3e28cfd9-25d4-4ebb-86e3-4a4a8a8936fe}</Project>
-      <Name>Cosmos.Compiler.Tests.SingleEchoTest</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cosmos.Kernel.Tests.Fat\Cosmos.Kernel.Tests.Fat.csproj">
-      <Project>{a0893493-d4f0-4b9f-9826-86319e143d86}</Project>
-      <Name>Cosmos.Kernel.Tests.Fat</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cosmos.Kernel.Tests.IO\Cosmos.Kernel.Tests.IO.csproj">
-      <Project>{47b1a772-4a53-4a53-9bad-31df119b1725}</Project>
-      <Name>Cosmos.Kernel.Tests.IO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cosmos.Kernel.Tests.LinqTests\Cosmos.Compiler.Tests.LinqTests.csproj">
-      <Project>{85b11f78-39bc-4cfc-9033-fc84ab14cd03}</Project>
-      <Name>Cosmos.Compiler.Tests.LinqTests</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cosmos.TestRunner.TestController\Cosmos.TestRunner.TestController.csproj">
-      <Project>{E6D3B644-C487-472D-A978-C1A82D0C099B}</Project>
-      <Name>Cosmos.TestRunner.TestController</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SimpleStructsAndArraysTest\SimpleStructsAndArraysTest.csproj">
-      <Project>{839edc9d-6d2e-4892-a7f0-17861ba9fa0c}</Project>
-      <Name>SimpleStructsAndArraysTest</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\VGACompilerCrash\VGACompilerCrash.csproj">
-      <Project>{21915a7e-cc84-4836-8b87-857b6149d496}</Project>
-      <Name>VGACompilerCrash</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

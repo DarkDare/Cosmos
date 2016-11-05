@@ -142,7 +142,7 @@ namespace Cosmos.System.FileSystem.FAT
 
                 throw new Exception("Failed to find an unallocated FAT entry.");
             }
-            
+
             /// <summary>
             /// Clears a fat entry.
             /// </summary>
@@ -478,7 +478,7 @@ namespace Cosmos.System.FileSystem.FAT
 
             byte[] xTempData;
             Read(aCluster, out xTempData);
-            Array.Copy(aData, 0, xTempData, (long)aOffset, aData.Length);
+            Array.Copy(aData, 0, xTempData, (int)aOffset, aData.Length);
 
             if (mFatType == FatTypeEnum.Fat32)
             {

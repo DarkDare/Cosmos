@@ -275,7 +275,7 @@ namespace Cosmos.System.Plugs.System.IO
             return false;
         }
 
-        [PlugMethod(IsOptional = true)]
+        [PlugMethod(Optional = true)]
         public static bool HasIllegalCharacters(string aPath, bool aCheckAdditional)
         {
             if (aCheckAdditional)

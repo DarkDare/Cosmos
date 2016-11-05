@@ -4,19 +4,6 @@ using Cosmos.Debug.Kernel;
 
 namespace Cosmos.IL2CPU.Plugs.System
 {
-    public enum InstanceTypeEnum : uint
-    {
-        NormalObject = 1,
-
-        Array = 2,
-
-        BoxedValueType = 3,
-
-        StaticEmbeddedObject = 0x80000001,
-
-        StaticEmbeddedArray = 0x80000002
-    }
-
     [Plug(Target = typeof(object))]
     public static class ObjectImpl
     {
@@ -43,7 +30,6 @@ namespace Cosmos.IL2CPU.Plugs.System
         ///         For arrays, next 4 bytes containing the element size.
         ///		</para>
         /// </summary>
-        public const int FieldDataOffset = 12;
 
         public static void Ctor(object aThis)
         {

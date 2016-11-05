@@ -377,10 +377,6 @@
       <Project>{A7F3F078-CF99-4018-9A35-2D6DC9517ADB}</Project>
       <Name>Cosmos.Debug.DebugStub</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Cosmos.System\Cosmos.System.csproj">
-      <Project>{3def0461-08ab-471a-8f03-a9c556652a0f}</Project>
-      <Name>Cosmos.System</Name>
-    </ProjectReference>
     <ProjectReference Include="..\XSharp.Nasm\XSharp.Nasm.csproj">
       <Project>{841A734E-9606-4AAB-9C4A-74E7E303FF5D}</Project>
       <Name>XSharp.Nasm</Name>
