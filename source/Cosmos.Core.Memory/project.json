@@ -1,23 +1,8 @@
-{
-  "version": "1.0.0-*",
-
+﻿{
   "dependencies": {
-    "Cosmos.Common": "1.0.0-*",
-    "Cosmos.Core.Common": "1.0.0-*",
-    "Cosmos.Debug.Kernel": "1.0.0-*",
-    "Cosmos.IL2CPU.Plugs": "1.0.0-*",
-    "NETStandard.Library": "1.6.0"
+    "Microsoft.NETCore": "5.0.0"
   },
-
   "frameworks": {
-    "netstandard1.6": {
-      "imports": "dnxcore50"
-    }
-  },
-
-  "buildOptions": {
-    "publicSign": true,
-    "keyFile": "Cosmos.snk",
-      "allowUnsafe": true
-    }
+    "netcore5.0": {}
+  }
 }

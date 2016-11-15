@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition="'$(Configuration)' == ''">Windows_Debug</Configuration>
+    <ProjectGuid>{C1CA41E6-1535-4CC6-981A-3B24DB95C796}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Cosmos.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.props))\dir.props" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Cosmos.System</AssemblyName>
+    <RootNamespace>Cosmos.System</RootNamespace>
+    <NuGetTargetMoniker>.NETCore,Version=v5.0</NuGetTargetMoniker>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Console.cs" />
+    <Compile Include="FileSystem\CosmosVFS.cs" />
+    <Compile Include="FileSystem\FAT\FatFileSystem.cs" />
+    <Compile Include="FileSystem\FAT\FatStream.cs" />
+    <Compile Include="FileSystem\FAT\Listing\FatDirectoryEntryAttributeConsts.cs" />
+    <Compile Include="FileSystem\FAT\Listing\FatDirectoryEntryMetadata.cs" />
+    <Compile Include="FileSystem\FAT\Listing\FatDiretoryEntry.cs" />
+    <Compile Include="FileSystem\FileSystem.cs" />
+    <Compile Include="FileSystem\FileSystemType.cs" />
+    <Compile Include="FileSystem\Listing\DirectoryEntry.cs" />
+    <Compile Include="FileSystem\VFS\VFSBase.cs" />
+    <Compile Include="FileSystem\VFS\VFSManager.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="Graphics\VBEScreen.cs" />
+    <Compile Include="Graphics\VGAScreen.cs" />
+    <Compile Include="Kernel.cs" />
+    <Compile Include="MathEx.cs" />
+    <Compile Include="Network\ARP\ARPCache.cs" />
+    <Compile Include="Network\ARP\ARPPacket.cs" />
+    <Compile Include="Network\EthernetPacket.cs" />
+    <Compile Include="Network\IPv4\Address.cs" />
+    <Compile Include="Network\IPv4\ARPPacket_Ethernet.cs" />
+    <Compile Include="Network\IPv4\Config.cs" />
+    <Compile Include="Network\IPv4\EndPoint.cs" />
+    <Compile Include="Network\IPv4\ICMPPacket.cs" />
+    <Compile Include="Network\IPv4\IPPacket.cs" />
+    <Compile Include="Network\IPv4\OutgoingBuffer.cs" />
+    <Compile Include="Network\IPv4\UDPPacket.cs" />
+    <Compile Include="Network\NetworkStack.cs" />
+    <Compile Include="Network\TempDictionary.cs" />
+    <Compile Include="Network\UdpClient.cs" />
+    <Compile Include="Power.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScanMaps\DE_Standard.cs" />
+    <Compile Include="ScanMaps\FR_Standard.cs" />
+    <Compile Include="ScanMaps\US_Standard.cs" />
+    <Compile Include="TestingHelpers.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Console.html" />
+    <Content Include="Kernel.html" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Windows_Debug|x64' " />
+  <ItemGroup>
+    <None Include=".editorconfig" />
+    <None Include="Cosmos.snk" />
+    <None Include="Network\.editorconfig" />
+    <None Include="project.json" />
+    <!-- A reference to the entire .NET Framework is automatically included -->
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cosmos.Common\Cosmos.Common.csproj">
+      <Project>{D1B48D00-D88B-42D2-A02E-5B2D504C4295}</Project>
+      <Name>Cosmos.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cosmos.Debug.Kernel\Cosmos.Debug.Kernel.csproj">
+      <Project>{FB820FB0-9C2F-4956-A516-D2E57D907F58}</Project>
+      <Name>Cosmos.Debug.Kernel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cosmos.HAL\Cosmos.HAL.csproj">
+      <Project>{8CFEC755-842E-4EA0-A8B6-CC618618B101}</Project>
+      <Name>Cosmos.HAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.targets))\dir.targets" />
+</Project>

@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Cosmos.Core.Plugs.Asm</RootNamespace>
     <AssemblyName>Cosmos.Core.Plugs.Asm</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,7 +42,7 @@
       <HintPath>..\Cosmos.Debug.Kernel\bin\Debug\net452\Cosmos.Debug.Kernel.dll</HintPath>
     </Reference>
     <Reference Include="Cosmos.IL2CPU.Plugs">
-      <HintPath>..\Cosmos.IL2CPU.Plugs\bin\Debug\net452\Cosmos.IL2CPU.Plugs.dll</HintPath>
+      <HintPath>..\Cosmos.IL2CPU.Plugs\bin\Debug\Cosmos.IL2CPU.Plugs.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

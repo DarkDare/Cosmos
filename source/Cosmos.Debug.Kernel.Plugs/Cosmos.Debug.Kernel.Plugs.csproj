@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Cosmos.Debug.Kernel.Plugs</RootNamespace>
     <AssemblyName>Cosmos.Debug.Kernel.Plugs</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
@@ -89,10 +89,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Cosmos.Debug.Kernel\bin\Debug\net452\Cosmos.Debug.Kernel.dll</HintPath>
     </Reference>
-    <Reference Include="Cosmos.IL2CPU.Plugs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=309e74c26df3ae7f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Cosmos.IL2CPU.Plugs\bin\Debug\net452\Cosmos.IL2CPU.Plugs.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -108,6 +104,10 @@
     <ProjectReference Include="..\Cosmos.Assembler\Cosmos.Assembler.csproj">
       <Project>{1116130e-28e0-428a-a597-f4b3b676c0ca}</Project>
       <Name>Cosmos.Assembler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cosmos.IL2CPU.Plugs\Cosmos.IL2CPU.Plugs.csproj">
+      <Project>{9bc2a761-a390-4247-94c0-0ce91c22f26e}</Project>
+      <Name>Cosmos.IL2CPU.Plugs</Name>
     </ProjectReference>
     <ProjectReference Include="..\XSharp.Compiler\XSharp.Compiler.csproj">
       <Project>{A281A1B1-C718-4BCB-A7BE-ED840A70449A}</Project>

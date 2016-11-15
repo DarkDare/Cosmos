@@ -1,16 +1,9 @@
 ﻿{
-    "version": "1.0.0-*",
-
-    "dependencies": {
-        "Cosmos.System": "1.0.0-*",
-        "Cosmos.Debug.Kernel": "1.0.0-*",
-        "Cosmos.TestRunner.TestController": "1.0.0-*",
-        "NETStandard.Library": "1.6.0"
-    },
-
-    "frameworks": {
-        "netstandard1.6": {
-            "imports": "dnxcore50"
-        }
-    }
+  "dependencies": {
+    "Microsoft.NETCore": "5.0.0",
+    "System.Console": "4.0.0"
+  },
+  "frameworks": {
+    "netcore5.0": {}
+  }
 }

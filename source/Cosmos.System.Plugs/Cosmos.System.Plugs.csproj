@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition="'$(Configuration)' == ''">Windows_Debug</Configuration>
+    <ProjectGuid>{AB2ABDF0-D7E0-46B8-8DB1-C91372E064FE}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Cosmos.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.props))\dir.props" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Cosmos.System.Plugs</AssemblyName>
+    <RootNamespace>Cosmos.System.Plugs</RootNamespace>
+    <NuGetTargetMoniker>.NETCore,Version=v5.0</NuGetTargetMoniker>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="System\BooleanImpl.cs" />
+    <Compile Include="System\ByteImpl.cs" />
+    <Compile Include="System\CharImpl.cs" />
+    <Compile Include="System\Collections\Generic\EqualityComparerImpl.cs" />
+    <Compile Include="System\ConsoleImpl.cs" />
+    <Compile Include="System\DecimalImpl.cs" />
+    <Compile Include="System\DictionaryImpl.cs" />
+    <Compile Include="System\DoubleImpl.cs" />
+    <Compile Include="System\Drawing\ColorImpl.cs" />
+    <Compile Include="System\Drawing\SRImpl.cs" />
+    <Compile Include="System\EnumImpl.cs" />
+    <Compile Include="System\Globalization\CultureInfoImpl.cs" />
+    <Compile Include="System\Int16Impl.cs" />
+    <Compile Include="System\Int32Impl.cs" />
+    <Compile Include="System\Int64Impl.cs" />
+    <Compile Include="System\IntPtrImpl.cs" />
+    <Compile Include="System\IO\DirectoryImpl.cs" />
+    <Compile Include="System\IO\DirectoryInfoImpl.cs" />
+    <Compile Include="System\IO\DriveInfoImpl.cs" />
+    <Compile Include="System\IO\ErrorImpl.cs" />
+    <Compile Include="System\IO\FileImpl.cs" />
+    <Compile Include="System\IO\FileInfoImpl.cs" />
+    <Compile Include="System\IO\FileStreamImpl.cs" />
+    <Compile Include="System\IO\FileSystemInfoImpl.cs" />
+    <Compile Include="System\IO\PathImpl.cs" />
+    <Compile Include="System\IO\StreamReaderImpl.cs" />
+    <Compile Include="System\MathImpl.cs" />
+    <Compile Include="System\Mda.cs" />
+    <Compile Include="System\Net\IPAddressImpl.cs" />
+    <Compile Include="System\Net\SocketAddressImpl.cs" />
+    <Compile Include="System\NumberImpl.cs" />
+    <Compile Include="System\RandomImpl.cs" />
+    <Compile Include="System\RuntimeTypeImpl.cs" />
+    <Compile Include="System\Runtime\Compilerservices\runtimehelpersImpl.cs" />
+    <Compile Include="System\SByteImpl.cs" />
+    <Compile Include="System\Security\CodeAccessSecurityEngineImpl.cs" />
+    <Compile Include="System\Security\Cryptography\CryptoConfigImpl.cs" />
+    <Compile Include="System\Security\Cryptography\UtilsImpl.cs" />
+    <Compile Include="System\Security\Permissions\FileIOPermissionImpl.cs" />
+    <Compile Include="System\Security\SecurityElementImpl.cs" />
+    <Compile Include="System\SingleImpl.cs" />
+    <Compile Include="System\SRImpl.cs" />
+    <Compile Include="System\Text\ASCIIEncodingImpl.cs" />
+    <Compile Include="System\Text\DecoderFallbackImpl.cs" />
+    <Compile Include="System\Text\EncoderFallbackImpl.cs" />
+    <Compile Include="System\Text\InternalDecoderBestFitFallbackBufferImpl.cs" />
+    <Compile Include="System\Threading\MonitorImpl.cs" />
+    <Compile Include="System\TypeImpl.cs" />
+    <Compile Include="System\UInt16Impl.cs" />
+    <Compile Include="System\UInt32Impl.cs" />
+    <Compile Include="System\UInt64Impl.cs" />
+    <Compile Include="System\UIntPtrImpl.cs" />
+    <Compile Include="System\ValueTypeImpl.cs" />
+    <Compile Include="System\WindowsInsiderPlugs.cs" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Windows_Debug|x64' " />
+  <ItemGroup>
+    <None Include="Cosmos.snk" />
+    <None Include="project.json" />
+    <!-- A reference to the entire .NET Framework is automatically included -->
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cosmos.Common\Cosmos.Common.csproj">
+      <Project>{D1B48D00-D88B-42D2-A02E-5B2D504C4295}</Project>
+      <Name>Cosmos.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cosmos.Debug.Kernel\Cosmos.Debug.Kernel.csproj">
+      <Project>{FB820FB0-9C2F-4956-A516-D2E57D907F58}</Project>
+      <Name>Cosmos.Debug.Kernel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cosmos.HAL\Cosmos.HAL.csproj">
+      <Project>{8cfec755-842e-4ea0-a8b6-cc618618b101}</Project>
+      <Name>Cosmos.HAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cosmos.IL2CPU.Plugs\Cosmos.IL2CPU.Plugs.csproj">
+      <Project>{9BC2A761-A390-4247-94C0-0CE91C22F26E}</Project>
+      <Name>Cosmos.IL2CPU.Plugs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cosmos.System\Cosmos.System.csproj">
+      <Project>{c1ca41e6-1535-4cc6-981a-3b24db95c796}</Project>
+      <Name>Cosmos.System</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.targets))\dir.targets" />
+</Project>

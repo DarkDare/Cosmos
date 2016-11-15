@@ -1,19 +1,8 @@
-﻿{
-  "version": "1.0.0-*",
-  "frameworks": {
-    "net452": {} ,
-    "netstandard1.6": {
-      "imports": "dnxcore50",
-      "dependencies": {
-        "NETStandard.Library": "1.6.0"
-      }
-    }
-  },
+{
   "dependencies": {
-    "Cosmos.Debug.Kernel": "1.0.0-*"
+    "NETStandard.Library": "1.6.0"
   },
-  "buildOptions": {
-    "publicSign": true,
-    "keyFile": "Cosmos.snk"
+  "frameworks": {
+    "netstandard1.3": {}
   }
 }

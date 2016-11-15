@@ -12,7 +12,6 @@ namespace Cosmos.IL2CPU
         private static bool IsAssemblySkippedDuringRingCheck(Assembly assembly)
         {
             string xName = assembly.GetName().Name;
-
             if (assembly.GlobalAssemblyCache ||
                 (xName == "Cosmos.Debug.Kernel") ||
                 (xName == "Cosmos.Debug.Kernel.Plugs") ||

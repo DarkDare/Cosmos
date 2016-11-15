@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition="'$(Configuration)' == ''">Windows_Debug</Configuration>
+    <ProjectGuid>{8CFEC755-842E-4EA0-A8B6-CC618618B101}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Cosmos.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.props))\dir.props" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Cosmos.HAL</AssemblyName>
+    <RootNamespace>Cosmos.HAL</RootNamespace>
+    <NuGetTargetMoniker>.NETCore,Version=v5.0</NuGetTargetMoniker>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="BlockDevice\Ata.cs" />
+    <Compile Include="BlockDevice\AtaPio.cs" />
+    <Compile Include="BlockDevice\BlockDevice.cs" />
+    <Compile Include="BlockDevice\EBR.cs" />
+    <Compile Include="BlockDevice\MBR.cs" />
+    <Compile Include="BlockDevice\Partition.cs" />
+    <Compile Include="Bootstrap.cs" />
+    <Compile Include="ConsoleKeyEx.cs" />
+    <Compile Include="ConsoleKeyExExtensions.cs" />
+    <Compile Include="DebugTextScreen.cs" />
+    <Compile Include="Device.cs" />
+    <Compile Include="Drivers\PCI\Audio\ES1370\Components\DACak4531.cs" />
+    <Compile Include="Drivers\PCI\Audio\ES1370\ES1370.cs" />
+    <Compile Include="Drivers\PCI\Audio\ES1370\Managers\AK4531Manager.cs" />
+    <Compile Include="Drivers\PCI\Audio\ES1370\Registers\CommandRegister.cs" />
+    <Compile Include="Drivers\PCI\Audio\ES1370\Registers\ControlRegister.cs" />
+    <Compile Include="Drivers\PCI\Audio\ES1370\Registers\InterruptStatusRegister.cs" />
+    <Compile Include="Drivers\PCI\Audio\ES1370\Registers\MainRegister.cs" />
+    <Compile Include="Drivers\PCI\Audio\ES1370\Registers\SerialInterfaceRegister.cs" />
+    <Compile Include="Drivers\PCI\Audio\ES1370\Registers\UartFIFORegister.cs" />
+    <Compile Include="Drivers\PCI\Audio\ES1370\Registers\UARTInterfaceRegister.cs" />
+    <Compile Include="Drivers\PCI\Audio\Generic\Components\ADCEntity.cs" />
+    <Compile Include="Drivers\PCI\Audio\Generic\Components\DACEntity.cs" />
+    <Compile Include="Drivers\PCI\Audio\Generic\Components\UARTEntity.cs" />
+    <Compile Include="Drivers\PCI\Audio\Generic\GenericSoundCard.cs" />
+    <Compile Include="Drivers\PCI\Audio\Generic\Managers\ADCManager.cs" />
+    <Compile Include="Drivers\PCI\Audio\Generic\Managers\DACManager.cs" />
+    <Compile Include="Drivers\PCI\Audio\Generic\Managers\UARTManager.cs" />
+    <Compile Include="Drivers\PCI\Audio\PCMStream.cs" />
+    <Compile Include="Drivers\PCI\Network\AMDPCNetII.cs" />
+    <Compile Include="Drivers\PCI\Network\RTL8139.cs" />
+    <Compile Include="Drivers\PCI\Network\VT6102.cs" />
+    <Compile Include="Drivers\PCI\Video\VMWareSVGAII.cs" />
+    <Compile Include="Drivers\USB\USBHost.cs" />
+    <Compile Include="Drivers\USB\USBHostOHCI.cs" />
+    <Compile Include="Drivers\USB\USBHostOHCIRegisters.cs" />
+    <Compile Include="Drivers\VBEDriver.cs" />
+    <Compile Include="Drivers\VGAScreen.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="Keyboard.cs" />
+    <Compile Include="KeyEvent.cs" />
+    <Compile Include="KeyMapping.cs" />
+    <Compile Include="Mouse.cs" />
+    <Compile Include="NetworkDevice.cs" />
+    <Compile Include="Network\MACAddress.cs" />
+    <Compile Include="PCI.cs" />
+    <Compile Include="PCIBaseAddressBar.cs" />
+    <Compile Include="PciDevice.cs" />
+    <Compile Include="PCIDeviceBridge.cs" />
+    <Compile Include="PCIDeviceCardbus.cs" />
+    <Compile Include="PCIDeviceNormal.cs" />
+    <Compile Include="PCSpeaker.cs" />
+    <Compile Include="PIT.cs" />
+    <Compile Include="Power.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PS2Keyboard.cs" />
+    <Compile Include="RTC.cs" />
+    <Compile Include="ScanMapBase.cs" />
+    <Compile Include="TextScreen.cs" />
+    <Compile Include="TextScreenBase.cs" />
+    <Compile Include="TextScreenHelpers.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BlockDevice\ATA.html" />
+    <Content Include="Drivers\ReadMe.html" />
+    <Content Include="Keyboard.html" />
+    <Content Include="PCI.html" />
+    <Content Include="PIT.html" />
+    <Content Include="RTC.html" />
+    <Content Include="TextScreen.html" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Windows_Debug|x64' " />
+  <ItemGroup>
+    <None Include=".editorconfig" />
+    <None Include="Cosmos.snk" />
+    <None Include="project.json" />
+    <!-- A reference to the entire .NET Framework is automatically included -->
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cosmos.Common\Cosmos.Common.csproj">
+      <Project>{d1b48d00-d88b-42d2-a02e-5b2d504c4295}</Project>
+      <Name>Cosmos.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cosmos.Core.Common\Cosmos.Core.Common.csproj">
+      <Project>{97F739A7-5B6B-4296-BD75-4BF5DE2003A4}</Project>
+      <Name>Cosmos.Core.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cosmos.Core\Cosmos.Core.csproj">
+      <Project>{334c02f3-2bf4-4704-88a9-f87284e064b5}</Project>
+      <Name>Cosmos.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cosmos.Debug.Kernel\Cosmos.Debug.Kernel.csproj">
+      <Project>{fb820fb0-9c2f-4956-a516-d2e57d907f58}</Project>
+      <Name>Cosmos.Debug.Kernel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cosmos.IL2CPU.Plugs\Cosmos.IL2CPU.Plugs.csproj">
+      <Project>{9bc2a761-a390-4247-94c0-0ce91c22f26e}</Project>
+      <Name>Cosmos.IL2CPU.Plugs</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.targets))\dir.targets" />
+</Project>

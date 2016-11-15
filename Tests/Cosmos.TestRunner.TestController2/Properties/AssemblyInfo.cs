@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Cosmos.Compiler.Tests.NetCore")]
+[assembly: AssemblyProduct("Cosmos.TestRunner.TestController")]
 [assembly: AssemblyTrademark("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -16,4 +16,4 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("2adb564c-3c65-4459-b8dc-43dd7d73dea8")]
+[assembly: Guid("faaf2e60-0a18-4628-b1c4-61a1d1a83877")]

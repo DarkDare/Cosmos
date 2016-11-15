@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Cosmos.Debug.Kernel;
-using Cosmos.TestRunner;
 using Sys = Cosmos.System;
 
 namespace Cosmos.Compiler.Tests.NetCore
@@ -11,24 +9,15 @@ namespace Cosmos.Compiler.Tests.NetCore
     {
         protected override void BeforeRun()
         {
-            Console.WriteLine("Cosmos booted successfully. Starting BCL tests now please wait...");
+            Console.WriteLine("Cosmos booted successfully. Type a line of text to get it echoed back.");
         }
 
         protected override void Run()
         {
-            try
-            {
-                mDebugger.Send("Run");
-                TestController.Completed();
-            }
-            catch (Exception e)
-            {
-                mDebugger.Send("Exception occurred: " + e.Message);
-                mDebugger.Send(e.Message);
-                Console.WriteLine("Exception occurred");
-                Console.WriteLine(e.Message);
-                TestController.Failed();
-            }
+            Console.Write("Input: ");
+            var input = Console.ReadLine();
+            Console.Write("Text typed: ");
+            Console.WriteLine(input);
         }
     }
 }

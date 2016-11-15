@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Cosmos.TestRunner.Core</RootNamespace>
     <AssemblyName>Cosmos.TestRunner.Core</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -68,14 +68,6 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Cosmos.IL2CPU.Plugs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=309e74c26df3ae7f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\source\Cosmos.IL2CPU.Plugs\bin\Debug\net452\Cosmos.IL2CPU.Plugs.dll</HintPath>
-    </Reference>
-    <Reference Include="Cosmos.TestRunner.TestController, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5ae71220097cb983, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Cosmos.TestRunner.TestController\bin\Debug\net452\Cosmos.TestRunner.TestController.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Build.Framework" />
     <Reference Include="Microsoft.Build.Utilities.v4.0" />
     <Reference Include="System" />
@@ -152,6 +144,10 @@
     <ProjectReference Include="..\..\source\IL2CPU\IL2CPU.csproj">
       <Project>{6128DEEB-D30F-4859-B60F-C36D5452F3E9}</Project>
       <Name>IL2CPU</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cosmos.TestRunner.TestController\Cosmos.TestRunner.TestController.csproj">
+      <Project>{84107160-b4ba-459e-bf15-f5c7cf67f58f}</Project>
+      <Name>Cosmos.TestRunner.TestController</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
