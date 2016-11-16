@@ -12,7 +12,7 @@
   <PropertyGroup>
     <DefaultNuGetRuntimeIdentifier>win10</DefaultNuGetRuntimeIdentifier>
 
-    <Platform Condition="'$(Platform)'==''">AnyCPU</Platform>
+    <Platform Condition="'$(Platform)'==''">x86</Platform>
     <Configuration Condition="'$(Configuration)' == ''">Debug</Configuration>
     <OptimizationGroup Condition="$(Configuration.EndsWith('Debug'))">Debug</OptimizationGroup>
     <OptimizationGroup Condition="$(Configuration.EndsWith('Release'))">Release</OptimizationGroup>
@@ -23,20 +23,6 @@
     <OSTarget Condition="'$(OSTarget)' == '' And $(Configuration.StartsWith('Ubuntu'))">Ubuntu</OSTarget>
     <OSTarget Condition="'$(OSTarget)' == '' And $(Configuration.StartsWith('OSX'))">OSX</OSTarget>
     <OSTarget Condition="'$(OSTarget)' == ''">AnyOS</OSTarget>
-  </PropertyGroup>
-
-  <!-- Default OptimizationGroup Properties -->
-  <PropertyGroup Condition="'$(OptimizationGroup)' == 'Debug'">
-    <DebugSymbols Condition="'$(DebugSymbols)' == ''">true</DebugSymbols>
-    <Optimize Condition="'$(Optimize)' == ''">false</Optimize>
-    <DebugType Condition="'$(DebugType)' == ''">full</DebugType>
-    <DefineConstants>$(DefineConstants);DEBUG;TRACE</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(OptimizationGroup)' == 'Release'">
-    <DebugSymbols Condition="'$(DebugSymbols)' == ''">true</DebugSymbols>
-    <Optimize Condition="'$(Optimize)' == ''">true</Optimize>
-    <DebugType Condition="'$(DebugType)' == ''">pdbonly</DebugType>
-    <DefineConstants>$(DefineConstants);TRACE</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(OS)' != 'Windows_NT'">
@@ -51,7 +37,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <PlatformTarget Condition="'$(PlatformTarget)' == 'AnyCPU'">x64</PlatformTarget>
+    <PlatformTarget Condition="'$(PlatformTarget)' == 'AnyCPU'">x86</PlatformTarget>
   </PropertyGroup>
 
   <PropertyGroup>

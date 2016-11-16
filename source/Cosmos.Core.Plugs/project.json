@@ -1,8 +1,8 @@
 ﻿{
   "dependencies": {
-    "Microsoft.NETCore": "5.0.0"
+    "NETStandard.Library": "1.6.0"
   },
   "frameworks": {
-    "netcore5.0": {}
+    "netstandard1.5": {}
   }
 }
