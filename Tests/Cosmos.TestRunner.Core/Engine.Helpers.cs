@@ -3,7 +3,6 @@ using System.IO;
 using System.Linq;
 using Cosmos.Build.Common;
 using Cosmos.Build.MSBuild;
-using Cosmos.Debug.Kernel.Plugs;
 using Cosmos.IL2CPU;
 using IL2CPU;
 using Microsoft.Win32;
@@ -33,7 +32,7 @@ namespace Cosmos.TestRunner.Core
 
         private void RunIL2CPU(string kernelFileName, string outputFile)
         {
-            string xPath = @"C:\Users\Charles\Dropbox\Development\Cosmos\Tests\Cosmos.Compiler.Tests.NetCore\bin\Debug\netstandard1.6";
+            string xPath = @"C:\Users\Charles\Dropbox\Development\Cosmos\Tests\Cosmos.Compiler.Tests.NetCore\bin\Debug\";
 
             var xArguments = new[]
                              {
@@ -50,7 +49,9 @@ namespace Cosmos.TestRunner.Core
                                  "IgnoreDebugStubAttribute:False",
                                  "References:" + kernelFileName,
                                  "References:" + Path.Combine(xPath, "Cosmos.Core.Plugs.dll"),
-                                 "References:" + Path.Combine(xPath, "Cosmos.Debug.Kernel.Plugs.dll"),
+                                 "References:" + Path.Combine(xPath, "Cosmos.Core.Plugs.Asm.dll"),
+                                 "References:" + Path.Combine(xPath, "Cosmos.Debug.Kernel.Plugs.Asm.dll"),
+                                 "References:" + Path.Combine(xPath, "Cosmos.IL2CPU.Plugs.dll"),
                                  "References:" + Path.Combine(xPath, "Cosmos.System.Plugs.dll")
                              };
 

@@ -4,8 +4,10 @@
     <Configuration Condition="'$(Configuration)' == ''">Debug</Configuration>
     <ProjectGuid>{acfe5525-7578-4431-a1fb-eebde6ca5b51}</ProjectGuid>
     <Name>Cosmos.Compiler.Tests.NetCoreBoot</Name>
-    <NuGetTargetMoniker>.NETStandard,Version=v1.5</NuGetTargetMoniker>
+    <TargetFrameworkIdentifier>.NETPortable</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
     <NoStdLib>true</NoStdLib>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
     <Profile>VMware</Profile>
@@ -28,6 +30,11 @@
     <Reference Include="Cosmos.Debug.Kernel.Plugs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5ae71220097cb983" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Cosmos.Compiler.Tests.NetCoreBoot.project.json">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\source\Cosmos.Core.Plugs.Asm\Cosmos.Core.Plugs.Asm.csproj">
       <Name>Cosmos.Core.Plugs.Asm</Name>
       <Project>{3343b476-3786-4a65-a0d4-c4d616718868}</Project>
@@ -35,7 +42,7 @@
     </ProjectReference>
     <ProjectReference Include="..\..\source\Cosmos.Core.Plugs\Cosmos.Core.Plugs.csproj">
       <Name>Cosmos.Core.Plugs</Name>
-      <Project>{ac862ad8-2779-49cd-b020-39f4fe6ef02f}</Project>
+      <Project>{128d9760-bb54-414b-bfda-621bb3149925}</Project>
       <Private>True</Private>
     </ProjectReference>
     <ProjectReference Include="..\..\source\Cosmos.Debug.Kernel.Plugs.Asm\Cosmos.Debug.Kernel.Plugs.Asm.csproj">
@@ -43,31 +50,19 @@
       <Project>{68961e25-44df-429c-a822-d551de4dafa2}</Project>
       <Private>True</Private>
     </ProjectReference>
-    <ProjectReference Include="..\..\source\Cosmos.Debug.Kernel.Plugs\Cosmos.Debug.Kernel.Plugs.csproj">
-      <Name>Cosmos.Debug.Kernel.Plugs</Name>
-      <Project>{b97a2956-c363-47f2-a6aa-b4fccff4d315}</Project>
-      <Private>True</Private>
-    </ProjectReference>
     <ProjectReference Include="..\..\source\Cosmos.IL2CPU.Plugs\Cosmos.IL2CPU.Plugs.csproj">
       <Name>Cosmos.IL2CPU.Plugs</Name>
-      <Project>{9bc2a761-a390-4247-94c0-0ce91c22f26e}</Project>
+      <Project>{67fd32f5-ff9a-4565-8efa-302842565096}</Project>
       <Private>True</Private>
     </ProjectReference>
     <ProjectReference Include="..\..\source\Cosmos.System.Plugs\Cosmos.System.Plugs.csproj">
       <Name>Cosmos.System.Plugs</Name>
-      <Project>{ab2abdf0-d7e0-46b8-8db1-c91372e064fe}</Project>
+      <Project>{2f7b5e9a-594a-4660-9059-f2a6826eb577}</Project>
       <Private>True</Private>
     </ProjectReference>
-    <ProjectReference Include="..\Cosmos.Compiler.Tests.NetCore\Cosmos.Compiler.Tests.NetCore.csproj">
-      <Name>Cosmos.Compiler.Tests.NetCore</Name>
-      <Project>{00937260-e0b2-4930-b6cc-41c870d8253c}</Project>
-      <Private>True</Private>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="project.json">
-      <SubType>Content</SubType>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Cosmos\Cosmos.targets" />
+  <PropertyGroup>
+    <NuGetTargetMoniker>.NETPlatform,Version=v5.0;.NETStandard,Version=v1.0;.NETStandard,Version=v1.1;.NETStandard,Version=v1.2;.NETStandard,Version=v1.3;.NETStandard,Version=v1.4;.NETStandard,Version=v1.5;.NETStandard,Version=v1.6</NuGetTargetMoniker>
+  </PropertyGroup>
 </Project>

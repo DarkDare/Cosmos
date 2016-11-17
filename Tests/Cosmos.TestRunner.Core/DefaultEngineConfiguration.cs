@@ -34,7 +34,7 @@ namespace Cosmos.TestRunner.Core
             //engine.RunWithGDB = true;
             //engine.StartBochsDebugGui = true;
 
-            string xPath = @"C:\Users\Charles\Dropbox\Development\Cosmos\Tests\Cosmos.Compiler.Tests.NetCore\bin\Debug\netstandard1.6";
+            string xPath = @"C:\Users\Charles\Dropbox\Development\Cosmos\Tests\Cosmos.Compiler.Tests.NetCore\bin\Debug\";
 
             // Select kernels to be tested by adding them to the engine
             engine.AddKernel(Path.Combine(xPath, "Cosmos.Compiler.Tests.NetCore.dll"));
