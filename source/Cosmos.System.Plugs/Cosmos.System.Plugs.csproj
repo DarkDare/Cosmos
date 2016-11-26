@@ -1,158 +1,39 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{2F7B5E9A-594A-4660-9059-F2A6826EB577}</ProjectGuid>
+﻿<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
+  <PropertyGroup Label="Configuration">
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Cosmos.System.Plugs</RootNamespace>
-    <AssemblyName>Cosmos.System.Plugs</AssemblyName>
-    <DefaultLanguage>en-US</DefaultLanguage>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <TargetFrameworkProfile>
-    </TargetFrameworkProfile>
-    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
+    <TargetFramework>netstandard1.4</TargetFramework>
+    <DelaySign>False</DelaySign>
+    <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>Cosmos.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <NoStdLib>true</NoStdLib>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <NoStdLib>true</NoStdLib>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <NoStdLib>true</NoStdLib>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <NoStdLib>true</NoStdLib>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
   <ItemGroup>
+    <Compile Include="**\*.cs" />
+    <EmbeddedResource Include="**\*.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="**\*.html" />
+    <None Include=".editorconfig" />
     <None Include="Cosmos.snk" />
-    <None Include="project.json" />
-    <!-- A reference to the entire .NET Framework is automatically included -->
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="System\BooleanImpl.cs" />
-    <Compile Include="System\ByteImpl.cs" />
-    <Compile Include="System\CharImpl.cs" />
-    <Compile Include="System\Collections\Generic\EqualityComparerImpl.cs" />
-    <Compile Include="System\ConsoleImpl.cs" />
-    <Compile Include="System\DecimalImpl.cs" />
-    <Compile Include="System\DictionaryImpl.cs" />
-    <Compile Include="System\DoubleImpl.cs" />
-    <Compile Include="System\Drawing\ColorImpl.cs" />
-    <Compile Include="System\Drawing\SRImpl.cs" />
-    <Compile Include="System\EnumImpl.cs" />
-    <Compile Include="System\Globalization\CultureInfoImpl.cs" />
-    <Compile Include="System\Int16Impl.cs" />
-    <Compile Include="System\Int32Impl.cs" />
-    <Compile Include="System\Int64Impl.cs" />
-    <Compile Include="System\IntPtrImpl.cs" />
-    <Compile Include="System\IO\DirectoryImpl.cs" />
-    <Compile Include="System\IO\DirectoryInfoImpl.cs" />
-    <Compile Include="System\IO\DriveInfoImpl.cs" />
-    <Compile Include="System\IO\ErrorImpl.cs" />
-    <Compile Include="System\IO\FileImpl.cs" />
-    <Compile Include="System\IO\FileInfoImpl.cs" />
-    <Compile Include="System\IO\FileStreamImpl.cs" />
-    <Compile Include="System\IO\FileSystemInfoImpl.cs" />
-    <Compile Include="System\IO\PathImpl.cs" />
-    <Compile Include="System\IO\StreamReaderImpl.cs" />
-    <Compile Include="System\MathImpl.cs" />
-    <Compile Include="System\Mda.cs" />
-    <Compile Include="System\Net\IPAddressImpl.cs" />
-    <Compile Include="System\Net\SocketAddressImpl.cs" />
-    <Compile Include="System\NumberImpl.cs" />
-    <Compile Include="System\RandomImpl.cs" />
-    <Compile Include="System\RuntimeTypeImpl.cs" />
-    <Compile Include="System\Runtime\Compilerservices\runtimehelpersImpl.cs" />
-    <Compile Include="System\SByteImpl.cs" />
-    <Compile Include="System\Security\CodeAccessSecurityEngineImpl.cs" />
-    <Compile Include="System\Security\Cryptography\CryptoConfigImpl.cs" />
-    <Compile Include="System\Security\Cryptography\UtilsImpl.cs" />
-    <Compile Include="System\Security\Permissions\FileIOPermissionImpl.cs" />
-    <Compile Include="System\Security\SecurityElementImpl.cs" />
-    <Compile Include="System\SingleImpl.cs" />
-    <Compile Include="System\SRImpl.cs" />
-    <Compile Include="System\Text\ASCIIEncodingImpl.cs" />
-    <Compile Include="System\Text\DecoderFallbackImpl.cs" />
-    <Compile Include="System\Text\EncoderFallbackImpl.cs" />
-    <Compile Include="System\Text\InternalDecoderBestFitFallbackBufferImpl.cs" />
-    <Compile Include="System\Threading\MonitorImpl.cs" />
-    <Compile Include="System\TypeImpl.cs" />
-    <Compile Include="System\UInt16Impl.cs" />
-    <Compile Include="System\UInt32Impl.cs" />
-    <Compile Include="System\UInt64Impl.cs" />
-    <Compile Include="System\UIntPtrImpl.cs" />
-    <Compile Include="System\ValueTypeImpl.cs" />
-    <Compile Include="System\WindowsInsiderPlugs.cs" />
+    <PackageReference Include="NETStandard.Library">
+      <Version>1.6.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NET.Sdk">
+      <Version>1.0.0-alpha-20161104-2</Version>
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Cosmos.Common\Cosmos.Common.csproj">
-      <Project>{95587227-af47-4f3c-82e0-2f4a2a5320d2}</Project>
-      <Name>Cosmos.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cosmos.Debug.Kernel\Cosmos.Debug.Kernel.csproj">
-      <Project>{fb820fb0-9c2f-4956-a516-d2e57d907f58}</Project>
-      <Name>Cosmos.Debug.Kernel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cosmos.HAL\Cosmos.HAL.csproj">
-      <Project>{09c15bbb-60eb-4c88-9a67-045da561ee8f}</Project>
-      <Name>Cosmos.HAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cosmos.IL2CPU.Plugs\Cosmos.IL2CPU.Plugs.csproj">
-      <Project>{67fd32f5-ff9a-4565-8efa-302842565096}</Project>
-      <Name>Cosmos.IL2CPU.Plugs</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Cosmos.System\Cosmos.System.csproj">
-      <Project>{1ec1c576-8ffb-4759-b1b0-d3a366929c54}</Project>
-      <Name>Cosmos.System</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\Cosmos.Common\Cosmos.Common.csproj" />
+    <ProjectReference Include="..\Cosmos.Core.Common\Cosmos.Core.Common.csproj" />
+    <ProjectReference Include="..\Cosmos.Core.Memory\Cosmos.Core.Memory.csproj" />
+    <ProjectReference Include="..\Cosmos.Core\Cosmos.Core.csproj" />
+    <ProjectReference Include="..\Cosmos.Debug.Kernel\Cosmos.Debug.Kernel.csproj" />
+    <ProjectReference Include="..\Cosmos.HAL\Cosmos.HAL.csproj" />
+    <ProjectReference Include="..\Cosmos.IL2CPU.Plugs\Cosmos.IL2CPU.Plugs.csproj" />
+    <ProjectReference Include="..\Cosmos.System\Cosmos.System.csproj" />
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

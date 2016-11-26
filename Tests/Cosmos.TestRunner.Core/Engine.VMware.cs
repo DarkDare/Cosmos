@@ -26,11 +26,10 @@ namespace Cosmos.TestRunner.Core
             var xDebugConnector = new DebugConnectorPipeServer(DebugConnectorPipeServer.DefaultCosmosPipeName);
             InitializeDebugConnector(xDebugConnector);
 
-            var xVMware = new VMware(xParams, RunWithGDB, harddisk);
-            xVMware.OnShutDown = (a, b) =>
-            {
-                mKernelRunning = false;
-            };
+            var xVMware = new VMware(xParams, RunWithGDB, harddisk)
+                          {
+                              OnShutDown = (a, b) => { mKernelRunning = false; }
+                          };
 
             HandleRunning(xDebugConnector, xVMware);
         }

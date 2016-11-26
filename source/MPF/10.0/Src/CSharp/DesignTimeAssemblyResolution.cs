@@ -8,6 +8,7 @@ using Microsoft.Build.Utilities;
 using Microsoft.Build.Execution;
 using System.IO;
 using System.Globalization;
+using Microsoft.Build.Tasks;
 
 namespace Microsoft.VisualStudio.Project
 {
@@ -50,7 +51,7 @@ namespace Microsoft.VisualStudio.Project
 
 			// Resolve references WITHOUT invoking MSBuild to avoid re-entrancy problems.
 			const bool projectDtar = true;
-			var rar = new Microsoft.Build.Tasks.ResolveAssemblyReference();
+			var rar = new ResolveAssemblyReference();
 			var engine = new MockEngine(EnableLogging);
 			rar.BuildEngine = engine;
 

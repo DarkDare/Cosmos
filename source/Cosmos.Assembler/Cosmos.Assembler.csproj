@@ -1,61 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{1116130E-28E0-428A-A597-F4B3B676C0CA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Cosmos.Assembler</RootNamespace>
     <AssemblyName>Cosmos.Assembler</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
     <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
     <AssemblyOriginatorKeyFile>Cosmos.snk</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-    <PlatformTarget>x86</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <Prefer32Bit>true</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-    <PlatformTarget>x86</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Prefer32Bit>true</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
-    <PlatformTarget>x64</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
-    <PlatformTarget>x64</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Xml.Linq">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data.DataSetExtensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -80,22 +67,19 @@
     <Compile Include="InfraExtensions.cs" />
     <Compile Include="Instruction.cs" />
     <Compile Include="Label.cs" />
-    <Compile Include="x86\Lea.cs" />
-    <Compile Include="LiteralAssemblerCode.cs" />
     <Compile Include="LabelName.cs" />
+    <Compile Include="LiteralAssemblerCode.cs" />
     <Compile Include="OpCodeAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="x86\Rdmsr.cs" />
-    <Compile Include="x86\Rdtsc.cs" />
     <Compile Include="StackContents.cs" />
     <Compile Include="TypeComparer.cs" />
     <Compile Include="x86\Add.cs" />
     <Compile Include="x86\AddWithCarry.cs" />
     <Compile Include="x86\And.cs" />
     <Compile Include="x86\Call.cs" />
+    <Compile Include="x86\ClearInterruptFlag.cs" />
     <Compile Include="x86\ClrCarryFlag.cs" />
     <Compile Include="x86\ClrDirFlag.cs" />
-    <Compile Include="x86\ClearInterruptFlag.cs" />
     <Compile Include="x86\Cmps.cs" />
     <Compile Include="x86\CmpXchg.cs" />
     <Compile Include="x86\Compare.cs" />
@@ -110,8 +94,8 @@
     <Compile Include="x86\Halt.cs" />
     <Compile Include="x86\IDivide.cs" />
     <Compile Include="x86\Imul.cs" />
-    <Compile Include="x86\InFromDX.cs" />
     <Compile Include="x86\INC.cs" />
+    <Compile Include="x86\InFromDX.cs" />
     <Compile Include="x86\INT.cs" />
     <Compile Include="x86\INT1.cs" />
     <Compile Include="x86\INT3.cs" />
@@ -120,6 +104,7 @@
     <Compile Include="x86\JumpAlways.cs" />
     <Compile Include="x86\JumpBase.cs" />
     <Compile Include="x86\JumpToSegment.cs" />
+    <Compile Include="x86\Lea.cs" />
     <Compile Include="x86\Lgdt.cs" />
     <Compile Include="x86\Lidt.cs" />
     <Compile Include="x86\LoadStatusFlags.cs" />
@@ -142,6 +127,8 @@
     <Compile Include="x86\Push.cs" />
     <Compile Include="x86\Pushad.cs" />
     <Compile Include="x86\Pushfd.cs" />
+    <Compile Include="x86\Rdmsr.cs" />
+    <Compile Include="x86\Rdtsc.cs" />
     <Compile Include="x86\Registers.cs" />
     <Compile Include="x86\Return.cs" />
     <Compile Include="x86\RotateLeft.cs" />
@@ -167,12 +154,10 @@
     <Compile Include="x86\SSE2\ConvertSS2SD.cs" />
     <Compile Include="x86\SSE2\ConvertTruncatePD2DQ.cs" />
     <Compile Include="x86\SSE2\ConvertTruncateSD2SI.cs" />
-    <None Include="x86\SSE2\ConvertTruncateSD2SIQ.not_used" />
     <Compile Include="x86\SSE2\ConvertTruncateSS2SI.cs" />
     <Compile Include="x86\SSE2\DivPD.cs" />
     <Compile Include="x86\SSE2\DivSD.cs" />
     <Compile Include="x86\SSE2\MoveAPD.cs" />
-    <None Include="x86\SSE2\MoveD.removed" />
     <Compile Include="x86\SSE2\MoveDQA.cs" />
     <Compile Include="x86\SSE2\MoveHLPD.cs" />
     <Compile Include="x86\SSE2\MoveHPD.cs" />
@@ -182,6 +167,7 @@
     <Compile Include="x86\SSE2\MoveUPD.cs" />
     <Compile Include="x86\SSE2\MulPD.cs" />
     <Compile Include="x86\SSE2\MulSD.cs" />
+    <Compile Include="x86\SSE2\Psrld.cs" />
     <Compile Include="x86\SSE2\SqrtSD.cs" />
     <Compile Include="x86\SSE2\SubPD.cs" />
     <Compile Include="x86\SSE2\SubSD.cs" />
@@ -210,7 +196,6 @@
     <Compile Include="x86\SSEAndMMX2\MoveUPS.cs" />
     <Compile Include="x86\SSEAndMMX2\MulPS.cs" />
     <Compile Include="x86\SSEAndMMX2\MulSS.cs" />
-    <Compile Include="x86\SSE2\Psrld.cs" />
     <Compile Include="x86\SSEAndMMX2\OrPs.cs" />
     <Compile Include="x86\SSEAndMMX2\POR.cs" />
     <Compile Include="x86\SSEAndMMX2\SSEInit.cs" />
@@ -300,22 +285,9 @@
     <Compile Include="x86\_Infra\InstructionWithSize.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Cosmos.snk" />
-    <None Include="x86\Cosmos.snk" />
     <None Include=".editorconfig" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\source\Cosmos.Build.Common\Cosmos.Build.Common.csproj">
-      <Project>{0462E82B-8C29-41A9-8265-9C89038ADB29}</Project>
-      <Name>Cosmos.Build.Common</Name>
-    </ProjectReference>
+    <None Include="Cosmos.snk" />
+    <None Include="x86\SSE2\ConvertTruncateSD2SIQ.not_used" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

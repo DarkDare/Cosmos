@@ -23,14 +23,13 @@ using System.Security.Policy;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using Microsoft.Build;
 using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.OLE.Interop;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.Win32;
 using IServiceProvider = System.IServiceProvider;
-using MSBuild = Microsoft.Build.Evaluation;
-using VSRegistry = Microsoft.VisualStudio.Shell.VSRegistry;
 
 namespace Microsoft.VisualStudio.Project
 {
@@ -677,7 +676,7 @@ namespace Microsoft.VisualStudio.Project
         /// <param name="engine">The build engine to use to create a build project.</param>
         /// <param name="fullProjectPath">The full path of the project.</param>
         /// <returns>A loaded msbuild project.</returns>
-        internal static MSBuild.Project InitializeMsBuildProject(MSBuild.ProjectCollection buildEngine, string fullProjectPath)
+        internal static Microsoft.Build.Evaluation.Project InitializeMsBuildProject(Microsoft.Build.Evaluation.ProjectCollection buildEngine, string fullProjectPath)
         {
             if(String.IsNullOrEmpty(fullProjectPath))
             {
@@ -689,8 +688,8 @@ namespace Microsoft.VisualStudio.Project
 
 
             // Check if the project already has been loaded with the fullProjectPath. If yes return the build project associated to it.
-            List<MSBuild.Project> loadedProject = new List<MSBuild.Project>(buildEngine.GetLoadedProjects(fullProjectPath));
-            MSBuild.Project buildProject = loadedProject != null && loadedProject.Count > 0 && loadedProject[0] != null ? loadedProject[0] : null;
+            List<Microsoft.Build.Evaluation.Project> loadedProject = new List<Microsoft.Build.Evaluation.Project>(buildEngine.GetLoadedProjects(fullProjectPath));
+            Microsoft.Build.Evaluation.Project buildProject = loadedProject != null && loadedProject.Count > 0 && loadedProject[0] != null ? loadedProject[0] : null;
 
             if(buildProject == null)
             {
@@ -707,7 +706,7 @@ namespace Microsoft.VisualStudio.Project
         /// <param name="fullProjectPath">The full path of the project.</param>
         /// <param name="exitingBuildProject">An Existing build project that will be reloaded.</param>
         /// <returns>A loaded msbuild project.</returns>
-        internal static MSBuild.Project ReinitializeMsBuildProject(MSBuild.ProjectCollection buildEngine, string fullProjectPath, MSBuild.Project exitingBuildProject)
+        internal static Microsoft.Build.Evaluation.Project ReinitializeMsBuildProject(Microsoft.Build.Evaluation.ProjectCollection buildEngine, string fullProjectPath, Microsoft.Build.Evaluation.Project exitingBuildProject)
         {
             // If we have a build project that has been loaded with another file unload it.
             try
@@ -732,7 +731,7 @@ namespace Microsoft.VisualStudio.Project
         /// <param name="engine">An instance of MSBuild.ProjectCollection build engine, that will be checked if initialized.</param>
         /// <param name="engine">The service provider.</param>
         /// <returns>The buildengine to use.</returns>
-        internal static MSBuild.ProjectCollection InitializeMsBuildEngine(MSBuild.ProjectCollection existingEngine, IServiceProvider serviceProvider)
+        internal static Microsoft.Build.Evaluation.ProjectCollection InitializeMsBuildEngine(Microsoft.Build.Evaluation.ProjectCollection existingEngine, IServiceProvider serviceProvider)
         {
             if(serviceProvider == null)
             {
@@ -741,7 +740,7 @@ namespace Microsoft.VisualStudio.Project
 
             if(existingEngine == null)
             {
-                MSBuild.ProjectCollection buildEngine = MSBuild.ProjectCollection.GlobalProjectCollection;
+                Microsoft.Build.Evaluation.ProjectCollection buildEngine = Microsoft.Build.Evaluation.ProjectCollection.GlobalProjectCollection;
                 return buildEngine;
             }
 

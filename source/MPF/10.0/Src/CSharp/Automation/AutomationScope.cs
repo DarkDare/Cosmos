@@ -10,6 +10,7 @@ PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
 ***************************************************************************/
 
 using System;
+using EnvDTE;
 using Microsoft.VisualStudio.Shell.Interop;
 using ErrorHandler = Microsoft.VisualStudio.ErrorHandler;
 
@@ -47,7 +48,7 @@ namespace Microsoft.VisualStudio.Project.Automation
 			{
 				throw new ArgumentNullException("provider");
 			}
-			extensibility = provider.GetService(typeof(EnvDTE.IVsExtensibility)) as IVsExtensibility3;
+			extensibility = provider.GetService(typeof(IVsExtensibility)) as IVsExtensibility3;
 			if(null == extensibility)
 			{
 				throw new InvalidOperationException();

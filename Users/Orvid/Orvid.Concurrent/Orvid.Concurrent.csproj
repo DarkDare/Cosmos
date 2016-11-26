@@ -3,7 +3,7 @@
   <PropertyGroup>
     <ProjectGuid>{FC0B18FE-6D0A-481C-8007-2138A88D0DB3}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>Library</OutputType>
     <RootNamespace>Orvid.Concurrent</RootNamespace>
     <AssemblyName>Orvid.Concurrent</AssemblyName>

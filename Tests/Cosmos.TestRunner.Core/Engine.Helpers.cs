@@ -5,6 +5,8 @@ using Cosmos.Build.Common;
 using Cosmos.Build.MSBuild;
 using Cosmos.IL2CPU;
 using IL2CPU;
+using Microsoft.Build.Tasks;
+using Microsoft.Build.Utilities;
 using Microsoft.Win32;
 
 namespace Cosmos.TestRunner.Core
@@ -52,7 +54,51 @@ namespace Cosmos.TestRunner.Core
                                  "References:" + Path.Combine(xPath, "Cosmos.Core.Plugs.Asm.dll"),
                                  "References:" + Path.Combine(xPath, "Cosmos.Debug.Kernel.Plugs.Asm.dll"),
                                  "References:" + Path.Combine(xPath, "Cosmos.IL2CPU.Plugs.dll"),
-                                 "References:" + Path.Combine(xPath, "Cosmos.System.Plugs.dll")
+                                 "References:" + Path.Combine(xPath, "Cosmos.System.Plugs.dll"),
+@"References:C:\Users\Charles\.nuget\packages\Microsoft.Win32.Primitives\4.3.0\ref\netstandard1.3\Microsoft.Win32.Primitives.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.AppContext\4.3.0\ref\netstandard1.6\System.AppContext.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Collections.Concurrent\4.3.0\ref\netstandard1.3\System.Collections.Concurrent.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Collections\4.3.0\ref\netstandard1.3\System.Collections.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Console\4.3.0\ref\netstandard1.3\System.Console.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Diagnostics.Debug\4.3.0\ref\netstandard1.3\System.Diagnostics.Debug.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Diagnostics.Tools\4.3.0\ref\netstandard1.0\System.Diagnostics.Tools.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Diagnostics.Tracing\4.3.0\ref\netstandard1.5\System.Diagnostics.Tracing.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Globalization.Calendars\4.3.0\ref\netstandard1.3\System.Globalization.Calendars.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Globalization\4.3.0\ref\netstandard1.3\System.Globalization.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.IO.Compression\4.3.0\ref\netstandard1.3\System.IO.Compression.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.IO.Compression.ZipFile\4.3.0\ref\netstandard1.3\System.IO.Compression.ZipFile.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.IO\4.3.0\ref\netstandard1.5\System.IO.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.IO.FileSystem\4.3.0\ref\netstandard1.3\System.IO.FileSystem.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.IO.FileSystem.Primitives\4.3.0\ref\netstandard1.3\System.IO.FileSystem.Primitives.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Linq\4.3.0\ref\netstandard1.6\System.Linq.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Linq.Expressions\4.3.0\ref\netstandard1.6\System.Linq.Expressions.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Net.Http\4.3.0\ref\netstandard1.3\System.Net.Http.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Net.Primitives\4.3.0\ref\netstandard1.3\System.Net.Primitives.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Net.Sockets\4.3.0\ref\netstandard1.3\System.Net.Sockets.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.ObjectModel\4.3.0\ref\netstandard1.3\System.ObjectModel.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Reflection\4.3.0\ref\netstandard1.5\System.Reflection.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Reflection.Extensions\4.3.0\ref\netstandard1.0\System.Reflection.Extensions.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Reflection.Primitives\4.3.0\ref\netstandard1.0\System.Reflection.Primitives.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Resources.ResourceManager\4.3.0\ref\netstandard1.0\System.Resources.ResourceManager.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Runtime\4.3.0\ref\netstandard1.5\System.Runtime.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Runtime.Extensions\4.3.0\ref\netstandard1.5\System.Runtime.Extensions.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Runtime.Handles\4.3.0\ref\netstandard1.3\System.Runtime.Handles.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Runtime.InteropServices\4.3.0\ref\netstandard1.5\System.Runtime.InteropServices.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Runtime.InteropServices.RuntimeInformation\4.3.0\ref\netstandard1.1\System.Runtime.InteropServices.RuntimeInformation.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Runtime.Numerics\4.3.0\ref\netstandard1.1\System.Runtime.Numerics.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Security.Cryptography.Algorithms\4.3.0\ref\netstandard1.6\System.Security.Cryptography.Algorithms.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Security.Cryptography.Encoding\4.3.0\ref\netstandard1.3\System.Security.Cryptography.Encoding.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Security.Cryptography.Primitives\4.3.0\ref\netstandard1.3\System.Security.Cryptography.Primitives.dll" ,
+@"References:C:\Users\Charles\.nuget\packages\System.Security.Cryptography.X509Certificates\4.3.0\ref\netstandard1.4\System.Security.Cryptography.X509Certificates.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Text.Encoding\4.3.0\ref\netstandard1.3\System.Text.Encoding.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Text.Encoding.Extensions\4.3.0\ref\netstandard1.3\System.Text.Encoding.Extensions.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Text.RegularExpressions\4.3.0\ref\netstandard1.6\System.Text.RegularExpressions.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Threading\4.3.0\ref\netstandard1.3\System.Threading.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Threading.Tasks\4.3.0\ref\netstandard1.3\System.Threading.Tasks.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Threading.Timer\4.3.0\ref\netstandard1.2\System.Threading.Timer.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Xml.ReaderWriter\4.3.0\ref\netstandard1.3\System.Xml.ReaderWriter.dll",
+@"References:C:\Users\Charles\.nuget\packages\System.Xml.XDocument\4.3.0\ref\netstandard1.3\System.Xml.XDocument.dll"
+
                              };
 
             if (RunIL2CPUInProcess)
